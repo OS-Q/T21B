@@ -1,18 +1,3 @@
-/*
- Copyright (c) 2014-present PlatformIO <contact@platformio.org>
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-**/
 
 #include "unittest_transport.h"
 #include "stm32f4xx_hal.h"
@@ -39,7 +24,7 @@ static UART_HandleTypeDef UartHandle;
 
 void unittest_uart_begin()
 {
-   GPIO_InitTypeDef  GPIO_InitStruct;
+  GPIO_InitTypeDef  GPIO_InitStruct;
 
   USARTx_TX_GPIO_CLK_ENABLE();
   USARTx_RX_GPIO_CLK_ENABLE();
