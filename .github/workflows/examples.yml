@@ -10,7 +10,7 @@ jobs:
         os: [ubuntu-16.04, windows-latest, macos-latest]
         python-version: [2.7, 3.7]
         example:
-          - "project"
+          # - "project"
           - "unit-testing/stm32cube"
         exclude:
           - {python-version: 2.7, example: "examples/zephyr-blink"}
