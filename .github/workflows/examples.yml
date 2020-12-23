@@ -1,4 +1,4 @@
-name: Examples
+name: OS-W18
 
 on: [push, pull_request]
 
@@ -8,16 +8,12 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-16.04, windows-latest, macos-latest]
-        python-version: [2.7, 3.7]
-        example:
-          # - "project"
-          - "unit-testing/stm32cube"
-        exclude:
-          - {python-version: 2.7, example: "examples/zephyr-blink"}
-          - {python-version: 2.7, example: "examples/zephyr-cpp-synchronization"}
-          - {python-version: 2.7, example: "examples/zephyr-drivers-can"}
-          - {python-version: 2.7, example: "examples/zephyr-net-https-client"}
-          - {python-version: 2.7, example: "examples/zephyr-subsys-usb-hid-mouse"}
+        python-version: [3.7]
+        project:
+          - "freeRTOS"
+          - "zephyr"
+          - "testing/libopencm3"
+          - "testing/cubeMX"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -32,6 +28,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U https://github.com/platformio/platformio/archive/develop.zip
           platformio platform install file://.
-      - name: Build examples
+      - name: Build W18
         run: |
-          platformio run -d ${{ matrix.example }}
+          platformio run -d ${{ matrix.project }}

@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.7"
+
+env:
+  - PLATFORMIO_PROJECT_DIR=./freeRTOS
+  - PLATFORMIO_PROJECT_DIR=./zephyr
+  - PLATFORMIO_PROJECT_DIR=testing/libopencm3
+  - PLATFORMIO_PROJECT_DIR=testing/cubeMX
+
+install:
+  - pip install -U https://github.com/platformio/platformio/archive/develop.zip
+  - platformio platform install file://.
+
+script:
+  - platformio run -s -d $PLATFORMIO_PROJECT_DIR
+
+notifications:
+  email: false
