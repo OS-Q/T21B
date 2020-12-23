@@ -1,4 +1,4 @@
-name: OS-W18
+name: W18
 
 on: [push, pull_request]
 
@@ -30,4 +30,4 @@ jobs:
           platformio platform install file://.
       - name: Build W18
         run: |
-          platformio run -d ${{ matrix.project }}
+          platformio run -d ${{ matrix.project }} --board=blackpill_f103c8

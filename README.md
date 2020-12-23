@@ -4,6 +4,6 @@
 
 ### [简介](https://github.com/OS-Q/W18/wiki)
 
-STM32 + libopencm3 + FreeRTOS + PlatformIO
+[W18](https://github.com/OS-Q/W18) STM32 + libopencm3 + FreeRTOS + PlatformIO
 
-### [OS-Q = [Open Source & Operating System]](http://www.OS-Q.com)
+### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)
