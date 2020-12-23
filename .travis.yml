@@ -10,7 +10,7 @@ env:
 
 install:
   - pip install -U https://github.com/platformio/platformio/archive/develop.zip
-  - platformio platform install file://.
+  - platformio platform install ststm32
 
 script:
   - platformio run -s -d $PLATFORMIO_PROJECT_DIR
