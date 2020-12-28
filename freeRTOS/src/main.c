@@ -20,14 +20,16 @@ static void task1(void *args __attribute__((unused)))
 {
     for (;;)
     {
-		gpio_toggle(GPIOC, GPIO13);
-		vTaskDelay(pdMS_TO_TICKS(200));
-	}
+        gpio_toggle(GPIOC, GPIO13);
+        vTaskDelay(pdMS_TO_TICKS(200));
+    }
 }
 
 /*
  * Main loop, this is where our program starts
  */
+
+
 
 int main(void)
 {
@@ -36,14 +38,15 @@ int main(void)
     // Enable clock for GPIO channel C
     rcc_periph_clock_enable(RCC_GPIOC);
     // Set pinmode for PC13
-	gpio_set_mode(GPIOC,GPIO_MODE_OUTPUT_10_MHZ,GPIO_CNF_OUTPUT_PUSHPULL,GPIO13);
-	// Turn LED off
-	gpio_set(GPIOC, GPIO13);
+    gpio_set_mode(GPIOC,GPIO_MODE_OUTPUT_10_MHZ,GPIO_CNF_OUTPUT_PUSHPULL,GPIO13);
+    // Turn LED off
+    gpio_set(GPIOC, GPIO13);
+
     // Tell FreeRTOS about our toggle task, and set it's stack and priority
-	xTaskCreate(task1, "LED", 100, NULL, 2, NULL);
+    xTaskCreate(task1, "LED", 100, NULL, 2, NULL);
     // Start RTOS Task scheduler
-	vTaskStartScheduler();
+    vTaskStartScheduler();
     // The task scheduler is blocking, so we should never come here...
-	for (;;);
-	return 0;
+    for (;;);
+    return 0;
 }
