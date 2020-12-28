@@ -4,6 +4,6 @@
 
 ### [简介](https://github.com/OS-Q/W18/wiki)
 
-[W18](https://github.com/OS-Q/W18)工程模板：libopencm3 + FreeRTOS + PlatformIO
+[W18](https://github.com/OS-Q/W18)工程模板
 
 ### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)

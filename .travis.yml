@@ -9,7 +9,7 @@ env:
   - PLATFORMIO_PROJECT_DIR=testing/cubeMX
 
 install:
-  - pip install -U https://github.com/platformio/platformio/archive/develop.zip
+  - pip install -U https://github.com/OS-Q/core/archive/master.zip
   - platformio platform install ststm32
 
 script:
