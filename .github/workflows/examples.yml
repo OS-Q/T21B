@@ -1,4 +1,4 @@
-name: W18
+name: T01B
 
 on: [push, pull_request]
 
@@ -28,6 +28,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -U https://github.com/OS-Q/core/archive/master.zip
           platformio platform install ststm32
-      - name: Build W18
+      - name: Build T01B
         run: |
           platformio run -d ${{ matrix.project }}
